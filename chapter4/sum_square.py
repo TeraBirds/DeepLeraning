@@ -11,14 +11,16 @@ def cross_entropy_error(y, t):
   delta = 1e-7
   return -np.sum(t * np.log(y[np.arange(batch_size), t] + delta)) / batch_size
 
-t1 = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
-y1 = [0.1, 0.05, 0.6, 0.0, 0.05, 0.1, 0.0, 0.1, 0.0, 0.0]
-print(sum_square_error(np.array(y1), np.array(t1)))
 
-t2 = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
-y2 = [0.1, 0.05, 0.1, 0.0, 0.05, 0.1, 0.0, 0.6, 0.0, 0.0]
-print(sum_square_error(np.array(y2), np.array(t2)))
+if __name__ == "__main__":
+  t1 = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+  y1 = [0.1, 0.05, 0.6, 0.0, 0.05, 0.1, 0.0, 0.1, 0.0, 0.0]
+  print(sum_square_error(np.array(y1), np.array(t1)))
 
-print("考査エントロピー誤差")
-print(cross_entropy_error(np.array(y1), np.array(t1)))
-print(cross_entropy_error(np.array(y2), np.array(t2)))
+  t2 = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+  y2 = [0.1, 0.05, 0.1, 0.0, 0.05, 0.1, 0.0, 0.6, 0.0, 0.0]
+  print(sum_square_error(np.array(y2), np.array(t2)))
+
+  print("考査エントロピー誤差")
+  print(cross_entropy_error(np.array(y1), np.array(t1)))
+  print(cross_entropy_error(np.array(y2), np.array(t2)))

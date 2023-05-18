@@ -77,3 +77,13 @@ class TwoLayerNet:
         grads['b1'] = np.sum(da1, axis=0)
 
         return grads
+
+if __name__ == "__main__":
+    net = TwoLayerNet(input_size=784, hidden_size=100, output_size=10)
+    print(net.params["W1"].shape)
+    print(net.params["b2"])
+    x = np.random.rand(100, 784)
+    t = np.random.rand(100, 10)
+    grads = net.gradient(x, t)
+    print(grads["b2"])
+    
